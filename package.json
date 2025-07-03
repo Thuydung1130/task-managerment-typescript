@@ -8,15 +8,25 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec ts-node index.ts",
+    "build": "rimraf dist && tsc",
+    "ts:check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "ts:check",
+    "build",
+    "add-build"
+  ],
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "md5": "^2.3.0",
-    "mongoose": "^8.16.1"
+    "mongoose": "^8.16.1",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

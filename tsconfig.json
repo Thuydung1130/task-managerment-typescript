@@ -3,11 +3,11 @@
     "target": "ES2020",
     "module": "CommonJS",
     //"rootDir": "./",
-    //"outDir": "js",
+    "outDir": "dist",
     "esModuleInterop": true,//dung duoc tu khoa import thay cho require
     //"strict": true,
     //"skipLibCheck": true,
      "removeComments": true//xoa comment khi bien dich sang file js
-     
+
   }
 }
